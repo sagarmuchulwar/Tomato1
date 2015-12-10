@@ -1,0 +1,67 @@
+# R language code in markdown page
+
+## Analysis of Tomato plant growth under different light condition
+
+Three plants ( A, B and C ) were exposed to different Light conditions
+
+Plant A was exposed to 12 hours of light every day
+Plant B was exposed to 8 hours of light every day
+Plant C was exposed to 4 hours of light every day
+
+
+We draw some interesting plots here in this Repo.
+
+```{r}
+
+library(ggplot2);
+library(dplyr);
+library(stringr);
+
+
+dim(tomatodata)
+names(tomatodata)
+head(tomatodata)
+str(tomatodata)
+
+```
+
+
+##Plot of Tomato plant height
+
+```{r}
+g1 <- ggplot(data = tomatodata, aes(x=tomatodata$"Days", y=tomatodata$"Height", color=tomatodata$Height))
+g1 = g1 + geom_point();
+g1 <- g1 + labs(title="Tomato Plant Height", x="No. of Days", y="Height")
+print(g1)
+
+```
+
+## plot of Height Vs Leaves
+
+```{r}
+g2 <- ggplot(data = tomatodata, aes(x=tomatodata$"Height", y=tomatodata$"Leaves", color=tomatodata$Height))
+g2 = g2 + geom_point();
+g2 <- g2 + labs(title="Height Vs Leaves", x="Height", y="Leaves")
+g2
+
+```
+
+## Plot of Tomato Plant leaves
+
+```{r}
+g3 <- ggplot(data = tomatodata, aes(x=tomatodata$"Days", y=tomatodata$"Leaves", 
+color= tomatodata$Height, horizontal='true'))
+g3 = g3 + geom_point();
+g3 <- g3 + labs(title="Tomato Plant Leaves", x="No. of Days", y="Leaves")
+g3
+
+```
+
+## Box Plot
+
+```{r}
+
+b <-plot(tomatodata$Plant, tomatodata$Height)
+b
+
+```
