@@ -14,7 +14,31 @@ We draw some interesting plots here in this Repo.
 
 ```r
 library(ggplot2);
+```
+
+```
+## Find out what's changed in ggplot2 with
+## news(Version == "1.0.1", package = "ggplot2")
+```
+
+```r
 library(dplyr);
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library(stringr);
 
 
