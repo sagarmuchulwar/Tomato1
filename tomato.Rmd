@@ -17,7 +17,9 @@ library(ggplot2);
 library(dplyr);
 library(stringr);
 
-
+path = "C:\\Users\\dell\\Tomato1"
+setwd(path)
+tomatodata<- read.csv("Plants.csv")
 dim(tomatodata)
 names(tomatodata)
 head(tomatodata)
